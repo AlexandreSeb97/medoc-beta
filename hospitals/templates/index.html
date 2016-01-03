@@ -1,0 +1,37 @@
+{% extends "layout_en.html" %}
+
+{% block content %}
+<div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  Seeing that the devs are making progress fills you with determination!</div>
+<div class="jumbotron">
+    <h1 class="title">MeDOC</h1>
+    <p class="lead"> Docs! Get started and sign up now to MeDOC! (Beta) </p>
+
+    <p><a class="btn btn-default" href=#>Get Started &raquo;</a></p>
+	<br />
+</div>
+
+<div class="jumbotron jumbotron-second">
+<div class="row">
+    <div class="col-md-4">
+        <h2 class="customheader">Hospitals</h2>
+        <p class="lead2">Know the closest hospital to your location.</p>
+        <p><a href="{% url 'hospital' %}" class="btn btn-primary btn-large">Hospitals &raquo;</a></p>
+
+    </div>
+    <div class="col-md-4">
+        <h2 class="customheader">Contact Us!</h2>
+        <p class="lead2">Contact information about the developers.</p>
+        <p><a class="btn btn-default" href=#>Contact &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2 class="customheader">About</h2>
+        <p class="lead2">Learn about our MeDOC and its developers</p>
+        <p><a class="btn btn-default" href=#>About &raquo;</a></p>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

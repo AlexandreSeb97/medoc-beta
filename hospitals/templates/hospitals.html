@@ -1,0 +1,285 @@
+{% extends "layout_en.html" %}
+
+{% block content %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71472007-1', 'auto');
+  ga('send', 'pageview');
+</script>
+    <style>
+      html, body, #map-canvas {
+        height: 390px;
+        width: 100%;
+        margin: 0px;
+        padding: 9px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places,v=3.exp&signed_in=true"></script>
+    <script>
+var map;
+var service;
+var marker;
+var pos;
+var infowindow;
+function initialize()
+{
+    var mapOptions = {
+     zoom: 15,
+     mapTypeId: google.maps.MapTypeId.ROADMAP,
+     scrollwheel: true,
+     panControl: false,
+     streetViewControl: false,
+     mapTypeControl: false,
+     };
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    //HTML5 geolocation
+    if (navigator.geolocation)
+    {
+       navigator.geolocation.getCurrentPosition(function(position)
+       {
+            pos = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+            infowindow = new google.maps.InfoWindow({map: map,position: pos,content: 'You are Here!'});
+            var request = {location:pos,radius:2000,types: ['hospital']};
+            map.setCenter(pos);
+            infowindow = new google.maps.InfoWindow();
+            var service = new google.maps.places.PlacesService(map);
+            service.nearbySearch(request,callback);
+        },
+        function()
+        {
+        handleNoGeolocation(true);
+        });
+    }
+    else
+    {
+    handleNoGeolocation(false);
+    }
+    function callback(results, status)
+    {
+      if (status == google.maps.places.PlacesServiceStatus.OK)
+      {
+        for (var i = 0; i < results.length; i++)
+        {
+          createMarker(results[i]);
+        }
+      }
+    }
+    function createMarker(place)
+    {
+      var placeLoc = place.geometry.location;
+      var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+      });
+    google.maps.event.addListener(marker, 'click', function()
+    {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+    });
+}
+}
+// new location on click
+function newLocation(newLat,newLng) {
+  newPos = new google.maps.LatLng(newLat,newLng);
+  var request = {location:newPos,radius:2000,types: ['hospital']};
+	map.setCenter({
+		lat : newLat,
+		lng : newLng
+	});
+  infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request,callback);
+  function callback(results, status)
+  {
+    if (status == google.maps.places.PlacesServiceStatus.OK)
+    {
+      for (var i = 0; i < results.length; i++)
+      {
+        createMarker(results[i]);
+      }
+    }
+  }
+  function createMarker(place)
+  {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location
+    });
+    google.maps.event.addListener(marker, 'click', function()
+    {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+    });
+}
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <script>
+    // new location click events
+$(document).ready(function () {
+    $("#dropdownMenu1").on('click', function () {
+   newLocation(18.5436986,-72.3407047);
+ });
+  $("#dropdownMenu2").on('click', function () {
+   newLocation(18.5503722,-72.2843336);
+ });
+  $("#dropdownMenu3").on('click', function () {
+   newLocation(18.5362529,-72.3164245);
+   });
+   $("#dropdownMenu4").on('click', function () {
+    newLocation(18.5295493,-72.3290734);
+     });
+    $("#dropdownMenu5").on('click', function () {
+     newLocation(18.529471,-72.3265811);
+      });
+     $("#dropdownMenu6").on('click', function () {
+      newLocation(18.488417,-72.3134261);
+       });
+       $("#dropdownMenu7").on('click', function () {
+        newLocation(18.5357858,-72.3318484);
+         });
+});
+   </script>
+  <body>
+
+<div class="panel panel-primary">
+  <div class="panel-body">
+<div id="hospital-page">
+    <div id="map-canvas"></div>
+    <p id="error"></p>
+    <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      Seeing that the hospitals page will soon be completed for Haiti fills you with determination!</div>
+
+<div class="dropdown">
+  <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Downtown PAP
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    {% for hospital in hospitals %}
+      {% if hospital.quartier == "Centre-Ville Port-au-Prince" %}
+    <li><a href="#">
+      {{ hospital.nom }}
+      {{ hospital.specialite }}
+          </br> {{ hospital.adresse }} --- Phone:{{ hospital.phone_number1 }} // {{ hospital.phone_number2 }}
+    </a></li>
+    {% endif %}
+{% endfor %}
+  </ul>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Delmas
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    {% for hospital in hospitals %}
+      {% if hospital.quartier == "Delmas" %}
+      <li><a href="#">
+        {{ hospital.nom }}
+        {{ hospital.specialite }}
+      </br> {{ hospital.adresse }} </br> Phone:{{ hospital.phone_number1 }} // {{ hospital.phone_number2 }}
+      </a></li>
+    {% endif %}
+{% endfor %}
+  </ul>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Canapé-Vert
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    {% for hospital in hospitals %}
+      {% if hospital.quartier == "Canapé-Vert" %}
+      <li><a href="#">
+        {{ hospital.nom }}
+        {{ hospital.specialite }}
+      </br> {{ hospital.adresse }} </br> Phone:{{ hospital.phone_number1 }} // {{ hospital.phone_number2 }}
+      </a></li>
+    {% endif %}
+{% endfor %}
+  </ul>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Pacot
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    {% for hospital in hospitals %}
+      {% if hospital.quartier == "Pacot" %}
+      <li><a href="#">
+        {{ hospital.nom }}
+        {{ hospital.specialite }}
+      </br> {{ hospital.adresse }} </br> Phone:{{ hospital.phone_number1 }} // {{ hospital.phone_number2 }}
+      </a></li>
+    {% endif %}
+{% endfor %}
+  </ul>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Turgeau
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    {% for hospital in hospitals %}
+      {% if hospital.quartier == "Turgeau" %}
+      <li><a href="#">
+        {{ hospital.nom }}
+        {{ hospital.specialite }}
+      </br> {{ hospital.adresse }} </br> Phone:{{ hospital.phone_number1 }} // {{ hospital.phone_number2 }}
+      </a></li>
+    {% endif %}
+{% endfor %}
+  </ul>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Fermathe
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    {% for hospital in hospitals %}
+      {% if hospital.quartier == "Fermathe" %}
+      <li><a href="#">
+        {{ hospital.nom }}
+        {{ hospital.specialite }}
+      </br> {{ hospital.adresse }} </br> Phone:{{ hospital.phone_number1 }} // {{ hospital.phone_number2 }}
+      </a></li>
+    {% endif %}
+{% endfor %}
+  </ul>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Bois-Verna
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    {% for hospital in hospitals %}
+      {% if hospital.quartier == "Bois-Verna" %}
+      <li><a id="droptext" href="#">
+        {{ hospital.nom }}
+        {{ hospital.specialite }}
+      </br> {{ hospital.adresse }} </br> Phone:{{ hospital.phone_number1 }} // {{ hospital.phone_number2 }}
+      </a></li>
+    {% endif %}
+{% endfor %}
+  </ul>
+</div>
+</div>
+
+{% endblock %}
