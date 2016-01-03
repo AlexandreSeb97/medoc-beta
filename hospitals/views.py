@@ -16,7 +16,7 @@ def index(request):
         'index.html',
         context_instance = RequestContext(request,
         {
-            'title':'Language',
+            'title':'Home',
             'year':datetime.now().year,
             'date':datetime.now().date,
         })
