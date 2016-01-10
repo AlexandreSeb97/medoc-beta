@@ -1,0 +1,31 @@
+{% extends "layout_en.html" %}
+
+{% block content %}
+ <div class="page-header">
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+<h4><i>{{ todocs }}</i></h4>
+<p><a href="{% url 'register' %}" class="btn btn-primary btn-large">Register! &raquo;</a></p>
+<div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  Seeing your name as a registered doctor here fills you with determination!</div>
+            </div>
+
+            <div class="panel panel-medoc">
+              <div class="panel-medoc">
+	    <h2 class="panel-title">List of our registered Docs.</h2>
+<h1 class="hospital" > Doctors in Haiti (beta) </h1>
+  {% for mydoctor in mydoctors %}
+    {% if mydoctor.country == "Haiti" %}
+  	   <div class="Doctor">
+         <h3> {{ mydoctor.name }}</h3>
+        <p> {{ mydoctor.email }} -- Specialite : {{ mydoctor.specialite }} </p>
+        {% endif %}
+{% endfor %}
+</div></div>
+
+
+{% endblock %}
+
+    Status API Training Shop Blog About Pricing 
+

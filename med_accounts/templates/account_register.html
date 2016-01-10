@@ -1,0 +1,27 @@
+{% extends "layout_en.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+<body>
+  <h2>{{ title }}</h2>
+  <div class="alert alert-info alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    Seeing that the register thingy works fills you with determination!</div>
+  <div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            <form action="." method="post" class="form-horizontal">
+                <h4> Welcome to MeDOC </h4>
+                <hr />
+  <form method=POST action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="register" class="btn btn-default"/>
+  </form>
+</section>
+</div>
+</div>
+</body>
+
+{% endblock %}
