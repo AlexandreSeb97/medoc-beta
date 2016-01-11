@@ -2,7 +2,7 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: #EF626C no-repeat center fixed ;
-    background: linear-gradient(#EF626C, #EF626C, #84DCCF, #84DCCF) no-repeat center fixed ;
+    background: linear-gradient(#2274A5, #2274A5, #84DCCF, #84DCCF) no-repeat center fixed ;
 }
 
 .title {
@@ -12,11 +12,11 @@ body {
 
 .th_contact010
 {
-background: #EF626C;
+background: #4C2A85;
 padding: inherit;
 width:30%;
 font:'Ubuntu', sans-serif;
-border-bottom:5px solid #84DCCF;
+border-bottom:5px solid #4C2A85;
 }
 
 .th_contact011
@@ -30,7 +30,7 @@ border-bottom:5px solid #B5EAE2;
 
 .th_contact02
 {
-background-color:#84DCCF;
+background-color:#4C2A85;
 border-radius:0 0 12px 12px;
 padding:2rem;
 width:30%;
@@ -49,7 +49,7 @@ font:'Ubuntu', sans-serif;
 .dropdown-menu
 {
     width: 100%;
-    color: #84DCCF;
+    color: #2274A5;
 }
 
 .droptext {
@@ -68,34 +68,36 @@ font:'Ubuntu', sans-serif;
 
 .panel-body
 {
-  background-color: #84DCCF;
+  background-color: #4C2A85;
 }
 
 .panel-medoc {
-  background-color: #EF626C;
-  border: 2px solid #FFFFFF;
+  background-color: #2274A5;
+  border: 1px solid #FFFFFF;
 }
 
 .panel
 {
-    background-color: #84DCCF;
+    background-color: #2274A5;
+        width:100%;
 }
 
 .panel-primary
 {
-    background-color: #84DCCF;
-    border: 2px solid #FFFFFF;
+    background-color: #4C2A85;
+    border: 1px solid #FFFFFF;
+
 }
 
 .hospital {
-  color : #2d4026;
+  color : #4C2A85;
   background-color: white;
 }
 
 .panel-primary > .panel-heading {
   color: #ffffff;
-  background-color: rgb(56,102,125);
-  border-color: rgb(56,102,125);
+  background-color: 4C2A85;
+  border-color: 4C2A85;
 }
 
 a{
@@ -107,21 +109,21 @@ a{
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-  border-bottom: #84DCCF;
+  border-bottom: #4C2A85;
   padding-bottom: 3px;
-  background-color: #EF626C;
-  border-color: #84DCCF;
+  background-color: #4C2A85;
+  border-color: #2274A5;
 }
 
 .navbar-inverse {
-  background-color: #84DCCF;
-  border-color: #EF626C;
+  background-color: #2274A5;
+  border-color: #4C2A85;
 }
 .navbar-inverse .navbar-brand {
-  color:  #EF626C;
+  color:  #4C2A85;
 }
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
-  color:  #EF626C);
+  color:  #4C2A85);
 }
 .navbar-inverse .navbar-text {
   color: #fdfdfd;
@@ -130,18 +132,18 @@ a{
   color: #fdfdfd;
 }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-  color: rgb(174, 203, 209);
+  color: #2274A5;
 }
 .navbar-inverse .navbar-nav > li > .dropdown-menu {
-  background-color:  #EF626C;
+  background-color:  #4C2A85;
 }
 .navbar-inverse .navbar-nav > li > .dropdown-menu > li > a {
-  color:  #EF626C;
+  color:  #4C2A85;
 }
 .navbar-inverse .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-inverse .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color:   #EF626C;
-  background-color:  #EF626C;
+  color:   #4C2A85;
+  background-color:  #4C2A85;
 }
 .navbar-inverse .navbar-nav > li > .dropdown-menu > li > .divider {
   background-color: #8CC3C8;
@@ -155,10 +157,10 @@ a{
   background-color:rgb(56,102,125);
 }
 .navbar-inverse .navbar-toggle {
-  border-color: #EF626C;
+  border-color: #4C2A85;
 }
 .navbar-inverse .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #EF626C;
+  background-color: #4C2A85;
 }
 .navbar-inverse .navbar-toggle .icon-bar {
   background-color: #FFFFFF;
@@ -179,11 +181,11 @@ a{
     color: #fdfdfd;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #EF626C;
+    color: #4C2A85;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #EF626C;
-    background-color: #EF626C;
+    color: #4C2A85;
+    background-color: #4C2A85;
   }
 }
 
@@ -216,18 +218,18 @@ h2
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   text-color : #FFFFFF ;
-  text-shadow: #84DCCF;
+  text-shadow: #4C2A85;
 }
 
 .btn-primary {
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
-  color : #FFFFFF ;
-  text-shadow: #84DCCF;
+  background : #4C2A85 ;
+  text-shadow: #FFFFFF;
 }
 
 .jumbotron {
-    background: #EF626C no-repeat center fixed ;
+    background: #4C2A85 no-repeat center fixed ;
     -webkit-background-size: cover; /* pour Chrome et Safari */
     -moz-background-size: cover; /* pour Firefox */
     -o-background-size: cover; /* pour Opera */
@@ -237,54 +239,13 @@ h2
 
 .jumbotron-second
  {
-  background: #84DCCF no-repeat center fixed ;
+  background: #2274A5 no-repeat center fixed ;
   -webkit-background-size: cover; /* pour Chrome et Safari */
   -moz-background-size: cover; /* pour Firefox */
   -o-background-size: cover; /* pour Opera */
   background-size: cover; /* version standardisée */
   text-align: center;
 }
-
-.slide1, .slide2, .slide3 {
-    min-height: 560px;
-    background-size: cover;
-    background-position: center center;
-}
-.slide1 {
-    background: #84DCCF no-repeat center fixed ;
-}
-.slide2 {
-    background: #EF626C no-repeat center fixed ;
-}
-.slide3 {
-    background: #FFFFFF;
-}
-/* Carousel Fade Effect */
-.carousel.carousel-fade .item {
-    -webkit-transition: opacity 1s linear;
-    -moz-transition: opacity 1s linear;
-    -ms-transition: opacity 1s linear;
-    -o-transition: opacity 1s linear;
-    transition: opacity 1s linear;
-    opacity: .5;
-}
-.carousel.carousel-fade .active.item {
-    opacity: 1;
-}
-.carousel.carousel-fade .active.left,
-.carousel.carousel-fade .active.right {
-    left: 0;
-    z-index: 2;
-    opacity: 0;
-    filter: alpha(opacity=0);
-}
-.carousel-overlay {
-    position: absolute;
-    bottom: 100px;
-    right: 0;
-    left: 0;
-}
-
 
 /* Set padding to keep content from hitting the edges */
 .body-content {

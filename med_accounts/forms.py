@@ -108,7 +108,8 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = MyDoctor
-        fields = ('email', 'password', 'name', 'country', 'specialite', 'name', 'owner_first_name', 'owner_last_name', 'is_active', 'is_admin', "is_member")
+        fields = ('email', 'password', 'name', 'country', 'specialite',
+                  'owner_first_name', 'owner_last_name', 'is_active', 'is_admin', "is_member")
 
     def clean_password(self):
         # Regardless of what the user provides, return the initial value.
