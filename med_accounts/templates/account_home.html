@@ -1,0 +1,24 @@
+{% extends "layout_en.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+  <head>
+    <meta charset="utf-8">
+    <title> This is a test</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+  </head>
+
+  <body>
+    <h1> Here is a form </h1>
+    <div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+      <form method='POST' action=''>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class='btn btn-block btn-primary' type='submit' value='Submit'/>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

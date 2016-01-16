@@ -5,6 +5,7 @@ from django.template import RequestContext
 from datetime import datetime
 from django.shortcuts import render, HttpResponseRedirect, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from med_accounts.forms import RegisterForm, LoginForm, UserChangeForm
@@ -31,9 +32,20 @@ def medoc(request):
     )
 
 
+def update_account(request):
+    form = UserChangeForm(request.POST or None)
+    context = {
+        "form": form
+    }
+    if form.is_valid():
+        instance = form.save(commit=False)
+
+    return render(request, 'account_home.html', context)
+
+
 def auth_login(request):
     form = LoginForm(request.POST or None)
-    next_url = request.GET.get('next')
+    next_url = request.GET.get('update')
     if form.is_valid():
         name = form.cleaned_data['name']
         password = form.cleaned_data['password']
@@ -55,6 +67,7 @@ def auth_login(request):
         "submit_btn_class": submit_btn_class,
         }
     return render(request, "account_login.html", context)
+
 
 def auth_register(request):
     form = RegisterForm(request.POST or None)
@@ -78,6 +91,7 @@ def auth_register(request):
         new_user.set_password(password) #RIGHT
         new_user.save()
 
+    #success = messages.success(request, "You have successfully created an account m8")
     action_url = reverse("register")
     title = "Register"
     submit_btn = "Create free account"
@@ -86,6 +100,6 @@ def auth_register(request):
         "form": form,
         "action_url": action_url,
         "title": 'Register now!',
-        "submit_btn": submit_btn
+        "submit_btn": submit_btn,
         }
     return render(request, "account_register.html", context)

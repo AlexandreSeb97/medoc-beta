@@ -11,15 +11,15 @@
   Seeing your name as a registered doctor here fills you with determination!</div>
             </div>
 
-            <div class="panel panel-medoc">
-              <div class="panel-medoc">
-	    <h2 class="panel-title">List of our registered Docs.</h2>
+            <div class="panel panel-primary">
+              <div class="panel-body">
+
 <h1 class="hospital" > Doctors in Haiti (beta) </h1>
   {% for mydoctor in mydoctors %}
     {% if mydoctor.country == "Haiti" %}
   	   <div class="Doctor">
-         <h3> {{ mydoctor.name }}</h3>
-        <p> {{ mydoctor.email }} -- Specialite : {{ mydoctor.specialite }} </p>
+         <h3 class="customheader"> {{ mydoctor.name }}</h3>
+        <p class="lead"> {{ mydoctor.email }} -- Specialite : {{ mydoctor.specialite }} </p>
         {% endif %}
 {% endfor %}
 </div></div>

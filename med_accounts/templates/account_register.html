@@ -17,6 +17,7 @@
   <form method=POST action="">
     {% csrf_token %}
     {{ form.as_p }}
+      {{ success }}
     <input type="submit" value="register" class="btn btn-default"/>
   </form>
 </section>

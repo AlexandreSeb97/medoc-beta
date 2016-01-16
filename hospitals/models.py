@@ -4,7 +4,7 @@ from django.db import models
 
 # Create your models here.
 class Hospital(models.Model):
-	nom = models.CharField(max_length=200)
+	nom = models.CharField(max_length=200, unique=True,)
 	quartier = models.CharField(max_length=75)
 	adresse = models.TextField(null=True)
 	email = models.EmailField(max_length=254)
