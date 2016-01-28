@@ -3,8 +3,8 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.utils.translation import ugettext_lazy as _
+from .models import Patients, MyDoctor
 
-from .models import MyDoctor
 
 class RegisterForm(forms.Form):
     name = forms.CharField(widget=forms.TextInput({
@@ -64,6 +64,10 @@ class RegisterForm(forms.Form):
         except:
             raise forms.ValidationError("There was an error, please try again or contact us.")
 
+    def successs(self):
+        success = "Awesome! You have created an account"
+        return success
+
 
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
@@ -118,6 +122,7 @@ class UserChangeForm(forms.ModelForm):
         # field does not have access to the initial value
         return self.initial["password"]
 
+
 class LoginForm(forms.Form):
     #Authentication form which WILL USE BOOTSTRAP NOW AND NOT THIS RAW UGLY LOOKING SHIT THAT WAS THERE BEFORE"
     name = forms.CharField(label="Your username", widget=forms.TextInput({
@@ -127,3 +132,42 @@ class LoginForm(forms.Form):
                 widget=forms.PasswordInput({
                 'class':'form-control',
                 'placeholder':'Password'}))
+
+
+class PatientsModelForm(forms.ModelForm):
+    class Meta:
+        model = Patients
+        fields = [
+        'patient_first_name',
+        'patient_last_name',
+        'name',
+        'email',
+        ]
+
+    def clean_patient_first_name(self):
+        patient_first_name = self.cleaned_data.get('patient_first_name')
+        return patient_first_name
+
+    def clean_patient_last_name(self):
+        patient_last_name = self.cleaned_data.get('patient_last_name')
+        return patient_last_name
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        try:
+            exists = Patients.objects.get(name=name)
+            raise forms.ValidationError("This username already exists")
+        except Patients.DoesNotExist:
+            return name
+        except:
+            raise forms.ValidationError("There was an error, please try again or contact us.")
+
+    def clean_email(self):
+        email = self.cleaned_data.get("email")
+        try:
+            exists = MyDoctor.objects.get(email=email)
+            raise forms.ValidationError("This email is taken")
+        except MyDoctor.DoesNotExist:
+            return email
+        except:
+            raise forms.ValidationError("There was an error, please try again or contact us.")

@@ -3,13 +3,13 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
-from django.shortcuts import render, HttpResponseRedirect, redirect
+from django.shortcuts import render, HttpResponseRedirect, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
-from med_accounts.forms import RegisterForm, LoginForm, UserChangeForm
-from med_accounts.models import MyDoctor
+from med_accounts.forms import RegisterForm, LoginForm, UserChangeForm, PatientsModelForm
+from med_accounts.models import MyDoctor, Patients
 
 # Create your views here.
 
@@ -45,16 +45,17 @@ def update_account(request):
 
 def auth_login(request):
     form = LoginForm(request.POST or None)
-    next_url = request.GET.get('update')
+    next_url = request.GET.get('next')
     if form.is_valid():
         name = form.cleaned_data['name']
         password = form.cleaned_data['password']
-        user = authenticate(name=name, password=password)
+        print name, password
+        user = authenticate(username=name, password=password)
         if user is not None:
             login(request, user)
             if next_url is not None:
                 return HttpResponseRedirect(next_url)
-            return HttpResponseRedirect("/create")
+            return HttpResponseRedirect("/medoc/create")
     action_url = reverse("auth_login")
     title = "Login"
     submit_btn = title
@@ -89,9 +90,9 @@ def auth_register(request):
         new_user.specialite = specialite
         #new_user.password = password #WRONG
         new_user.set_password(password) #RIGHT
+        messages.success(request, "You've been registered m8")
         new_user.save()
 
-    #success = messages.success(request, "You have successfully created an account m8")
     action_url = reverse("register")
     title = "Register"
     submit_btn = "Create free account"
@@ -103,3 +104,32 @@ def auth_register(request):
         "submit_btn": submit_btn,
         }
     return render(request, "account_register.html", context)
+
+
+@login_required
+def create_view(request):
+    form = PatientsModelForm(request.POST or None)
+    if form.is_valid():
+        patient = form.save(commit=False)
+        patient.user = request.user
+        patient.save()
+    template = "create_view.html"
+    context = {
+        "form": form,
+    }
+    return render(request, template, context)
+
+
+@login_required
+def update_view(request, object_id=None):
+    patient = get_object_or_404(Patients, id=object_id)
+    form = PatientsModelForm(request.POST or None, instance=patient)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+    template = "account_home.html"
+    context = {
+        "object": patient,
+        "form": form,
+    }
+    return render(request, template, context)

@@ -1,0 +1,21 @@
+{% extends "layout_en.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+
+  <div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            <form action="." method="post" class="form-horizontal">
+    <form method=POST action="">
+      {% csrf_token %}
+      {{ form.as_p }}
+    <input type="submit" value="create" class="btn btn-default"/>
+    </form>
+                </form>
+</section>
+</div>
+</div>
+
+{% endblock %}

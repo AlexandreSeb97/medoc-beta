@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
+from django.conf import settings
 
 from django.db import models
 
@@ -101,4 +102,13 @@ class MyDoctor(AbstractBaseUser):
         return self.is_admin
 
 
+class Patients(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    patient_first_name = models.CharField(max_length=100)
+    patient_last_name = models.CharField(max_length=100)
+    name = models.CharField(max_length=255, unique=True,)
+    email = models.EmailField(verbose_name='email address', max_length=255, unique=True,)
+
+    def __str__(self):
+        return self.patient_last_name
 
