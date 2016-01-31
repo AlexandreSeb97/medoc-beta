@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1bd89b5-fe24-478b-8b09-675979ce2510" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/medoc.iml" afterPath="$PROJECT_DIR$/.idea/medoc.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hospitals/views.py" afterPath="$PROJECT_DIR$/hospitals/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/med_accounts/admin.py" afterPath="$PROJECT_DIR$/med_accounts/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/med_accounts/forms.py" afterPath="$PROJECT_DIR$/med_accounts/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/med_accounts/models.py" afterPath="$PROJECT_DIR$/med_accounts/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/med_accounts/templates/medoc.html" afterPath="$PROJECT_DIR$/med_accounts/templates/medoc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/med_accounts/urls.py" afterPath="$PROJECT_DIR$/med_accounts/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/med_accounts/views.py" afterPath="$PROJECT_DIR$/med_accounts/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/medoc/settings.py" afterPath="$PROJECT_DIR$/medoc/settings.py" />
     </list>
     <ignored path="medoc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,8 +49,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/med_accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.7993139">
-              <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.63013697">
+              <caret line="135" column="23" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -70,7 +61,7 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/med_accounts/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.692307">
+            <state vertical-scroll-proportion="0.0">
               <caret line="24" column="85" selection-start-line="24" selection-start-column="85" selection-end-line="24" selection-end-column="85" />
               <folding />
             </state>
@@ -80,7 +71,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hospitals/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.076923">
+            <state vertical-scroll-proportion="0.0">
               <caret line="23" column="10" selection-start-line="18" selection-start-column="3" selection-end-line="23" selection-end-column="10" />
               <folding />
             </state>
@@ -145,10 +136,10 @@
         <option value="$PROJECT_DIR$/med_accounts/forms.py" />
         <option value="$PROJECT_DIR$/med_accounts/urls.py" />
         <option value="$PROJECT_DIR$/med_accounts/templates/medoc.html" />
-        <option value="$PROJECT_DIR$/med_accounts/views.py" />
         <option value="$PROJECT_DIR$/med_accounts/templates/base.html" />
         <option value="$PROJECT_DIR$/med_accounts/models.py" />
         <option value="$PROJECT_DIR$/medoc/settings.py" />
+        <option value="$PROJECT_DIR$/med_accounts/views.py" />
       </list>
     </option>
   </component>
@@ -757,13 +748,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6702509">
           <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hospitals/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.076923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="23" column="10" selection-start-line="18" selection-start-column="3" selection-end-line="23" selection-end-column="10" />
           <folding />
         </state>
@@ -771,7 +761,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/med_accounts/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.692307">
+        <state vertical-scroll-proportion="0.0">
           <caret line="24" column="85" selection-start-line="24" selection-start-column="85" selection-end-line="24" selection-end-column="85" />
           <folding />
         </state>
@@ -813,8 +803,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/med_accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7993139">
-          <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.63013697">
+          <caret line="135" column="23" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

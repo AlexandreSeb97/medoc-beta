@@ -132,9 +132,11 @@ def create_view(request):
     form = PatientsModelForm(request.POST or None)
     user_on = request.user
     user_name = user_on.get_username()
+    id =user_on.id
     if form.is_valid():
         patient = form.save(commit=False)
         patient.created_by = user_name
+        patient.user_id = id
         patient.save()
     template = "create_view.html"
     context = {
