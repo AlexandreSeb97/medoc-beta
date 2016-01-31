@@ -3,7 +3,7 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.utils.translation import ugettext_lazy as _
-from .models import Patients, MyDoctor
+from .models import Patient, MyDoctor
 
 
 class RegisterForm(forms.Form):
@@ -136,7 +136,7 @@ class LoginForm(forms.Form):
 
 class PatientsModelForm(forms.ModelForm):
     class Meta:
-        model = Patients
+        model = Patient
         fields = [
         'patient_first_name',
         'patient_last_name',
@@ -155,9 +155,9 @@ class PatientsModelForm(forms.ModelForm):
     def clean_name(self):
         name = self.cleaned_data.get('name')
         try:
-            exists = Patients.objects.get(name=name)
+            exists = Patient.objects.get(name=name)
             raise forms.ValidationError("This username already exists")
-        except Patients.DoesNotExist:
+        except Patient.DoesNotExist:
             return name
         except:
             raise forms.ValidationError("There was an error, please try again or contact us.")

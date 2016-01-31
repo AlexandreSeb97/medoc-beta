@@ -102,12 +102,13 @@ class MyDoctor(AbstractBaseUser):
         return self.is_admin
 
 
-class Patients(models.Model):
+class Patient(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
     patient_first_name = models.CharField(max_length=100)
     patient_last_name = models.CharField(max_length=100)
     name = models.CharField(max_length=255, unique=True,)
     email = models.EmailField(verbose_name='email address', max_length=255, unique=True,)
+    created_by = models.CharField(max_length=255, default='Not Created')
 
     def __str__(self):
         return self.patient_last_name

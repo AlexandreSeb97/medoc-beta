@@ -3,7 +3,7 @@ from django.http import Http404
 from django.http import HttpRequest
 from django.http import HttpResponse
 from django.template import RequestContext
-from models import Hospital
+from .models import Hospital
 from datetime import datetime
 from django.shortcuts import render, HttpResponseRedirect, redirect
 

@@ -6,10 +6,11 @@ from datetime import datetime
 from django.shortcuts import render, HttpResponseRedirect, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from med_accounts.forms import RegisterForm, LoginForm, UserChangeForm, PatientsModelForm
-from med_accounts.models import MyDoctor, Patients
+from med_accounts.models import MyDoctor, Patient
 
 # Create your views here.
 
@@ -31,6 +32,26 @@ def medoc(request):
         })
     )
 
+@login_required
+def base(request):
+    patient = Patient.objects.all()
+    user_on = request.user
+    user_short = user_on.get_short_name()
+    user_name = user_on.get_username()
+    assert isinstance(request, HttpRequest)
+    return render (
+        request,
+        'base.html',
+        {'patients': patient},
+        context_instance=RequestContext(request,
+        {
+            'title': 'Welcome Dr ' + user_short,
+            'doctor_name': user_short,
+            'message': "Here's the list of your patients sir",
+            "user_name": user_name,
+            'year': datetime.now().year,
+        })
+    )
 
 def update_account(request):
     form = UserChangeForm(request.POST or None)
@@ -49,13 +70,13 @@ def auth_login(request):
     if form.is_valid():
         name = form.cleaned_data['name']
         password = form.cleaned_data['password']
-        print name, password
+        print (name, password)
         user = authenticate(username=name, password=password)
         if user is not None:
             login(request, user)
             if next_url is not None:
                 return HttpResponseRedirect(next_url)
-            return HttpResponseRedirect("/medoc/create")
+            return HttpResponseRedirect("/medoc/base")
     action_url = reverse("auth_login")
     title = "Login"
     submit_btn = title
@@ -90,8 +111,8 @@ def auth_register(request):
         new_user.specialite = specialite
         #new_user.password = password #WRONG
         new_user.set_password(password) #RIGHT
-        messages.success(request, "You've been registered m8")
         new_user.save()
+        messages.success(request, "Bienvenue %s" % request.user)
 
     action_url = reverse("register")
     title = "Register"
@@ -109,20 +130,23 @@ def auth_register(request):
 @login_required
 def create_view(request):
     form = PatientsModelForm(request.POST or None)
+    user_on = request.user
+    user_name = user_on.get_username()
     if form.is_valid():
         patient = form.save(commit=False)
-        patient.user = request.user
+        patient.created_by = user_name
         patient.save()
     template = "create_view.html"
     context = {
         "form": form,
+        "user_name": user_name,
     }
     return render(request, template, context)
 
 
 @login_required
 def update_view(request, object_id=None):
-    patient = get_object_or_404(Patients, id=object_id)
+    patient = get_object_or_404(Patient, id=object_id)
     form = PatientsModelForm(request.POST or None, instance=patient)
     if form.is_valid():
         instance = form.save(commit=False)

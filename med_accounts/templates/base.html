@@ -1,0 +1,30 @@
+{% extends "layout_en.html" %}
+
+{% block content %}
+ <div class="page-header">
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+<div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="success" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  Seeing that this thing works fills you with determination! Ayiti ap vanse!</div>
+            </div>
+
+            <div class="panel panel-primary">
+              <div class="panel-body">
+
+<h1 class="hospital" > Patients </h1>
+  {% for patient in patients %}
+                  {% if patient.created_by == user_name %}
+  	   <div class="Doctor">
+         <h3 class="customheader"> {{ user_short }}</h3>
+        <p class="lead"> {{ patient.patient_first_name }} {{ patient.patient_last_name }} </p>
+           {% endif %}
+{% endfor %}
+            <div class="col-md-4">
+        <h2 class="customheader">Add Patients</h2>
+        <p><a href="{% url 'create' %}" class="btn btn-primary btn-large">Add Patient &raquo;</a></p>
+
+    </div>
+</div></div></div>
+
+{% endblock %}

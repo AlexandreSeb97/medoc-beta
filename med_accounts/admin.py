@@ -1,8 +1,7 @@
 from django.contrib import admin
-from models import MyDoctor
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin
-from .models import MyDoctor, Patients
+from .models import MyDoctor, Patient
 from .forms import UserChangeForm, UserCreationForm
 # Register your models here.
 
@@ -34,7 +33,7 @@ class MyDoctorAdmin(UserAdmin):
     filter_horizontal = ()
 
 #Register the new UserAdmin
-admin.site.register(Patients)
+admin.site.register(Patient)
 admin.site.register(MyDoctor, MyDoctorAdmin)
 #unregister the group model admin
 
