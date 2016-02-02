@@ -29,10 +29,10 @@
                     <li><a href="{% url 'index' %}">Home</a></li>
                     <li><a href="{% url 'hospital' %}"> Hospitals </a></li>
                     <li><a href="{% url 'medoc' %}"> MeDOC App </a></li>
-                    <li><a href="{% url 'auth_login' %}">Log In</a></li>
+                    <!--<li><a href="{% url 'auth_login' %}">Log In</a></li>-->
 					<!--<li><a href="{% url 'index' %}">Change Language</a></li>-->
                 </ul>
-
+                {% include 'loginpartial.html' %}
             </div>
         </div>
     </div>

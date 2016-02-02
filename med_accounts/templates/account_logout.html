@@ -1,0 +1,10 @@
+{% extends "layout_en.html" %}
+
+{% block content %}
+
+  <div>
+    <p> You have now been logged out. </p>
+    <p> Do you want to <a href='{% url "auth_login" %}'> sign in </a> back? </p>
+  </div>
+
+{% endblock %}

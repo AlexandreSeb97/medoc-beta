@@ -53,6 +53,12 @@ def base(request):
         })
     )
 
+
+def auth_logout(request):
+    logout(request)
+    return HttpResponseRedirect("/medoc/auth_login")
+
+
 def update_account(request):
     form = UserChangeForm(request.POST or None)
     context = {

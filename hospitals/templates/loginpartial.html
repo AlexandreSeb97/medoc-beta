@@ -1,0 +1,16 @@
+{% if request.user.is_authenticated %}
+<form id="logoutForm" action="/logout" method="post" class="navbar-right">
+    {% csrf_token %}
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'base' %}"> Logged in as {{ user.username }}!</a></li>
+        <li><a href="{% url 'auth_logout' %}">Log off</a></li>
+    </ul>
+</form>
+
+{% else %}
+
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="{% url 'auth_login' %}">Log in</a></li>
+</ul>
+
+{% endif %}
