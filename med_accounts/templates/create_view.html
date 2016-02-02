@@ -2,20 +2,22 @@
 
 {% block content %}
 {% load staticfiles %}
-
-
+<br /><br />
+<div class="jumbotron jumbotron-second">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-6">
         <section id="loginForm">
             <form action="." method="post" class="form-horizontal">
     <form method=POST action="">
       {% csrf_token %}
       {{ form.as_p }}
-    <input type="submit" value="create" class="btn btn-default"/>
+    <input type="submit" value="Add Patient" class="btn btn-default"/>
     </form>
-                </form>
+            <p>If done adding, go back</p>
+        <p><a href="{% url 'base' %}" class="btn btn-primary btn-large">Back &raquo;</a></p></form>
 </section>
-</div>
-</div>
+      </div>
+      </div>
+    </div>
 
 {% endblock %}
