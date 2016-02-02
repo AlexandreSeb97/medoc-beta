@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1bd89b5-fe24-478b-8b09-675979ce2510" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/medoc-beta" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hospitals/templates/layout_en.html" afterPath="$PROJECT_DIR$/hospitals/templates/layout_en.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/med_accounts/templates/layout_en.html" afterPath="$PROJECT_DIR$/med_accounts/templates/layout_en.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/med_accounts/urls.py" afterPath="$PROJECT_DIR$/med_accounts/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/med_accounts/views.py" afterPath="$PROJECT_DIR$/med_accounts/views.py" />
     </list>
     <ignored path="medoc.iws" />
@@ -40,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/med_accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.6123499">
+              <caret line="48" column="46" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -52,10 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginpartial.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="loginpartial.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hospitals/templates/loginpartial.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15260324">
+            <state vertical-scroll-proportion="-3.2692308">
               <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
               <folding />
             </state>
@@ -67,6 +62,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-3.9230769">
               <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/med_accounts/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="105" column="8" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -113,9 +118,9 @@
         <option value="$PROJECT_DIR$/med_accounts/templates/layout_en.html" />
         <option value="$PROJECT_DIR$/hospitals/templates/layout_en.html" />
         <option value="$PROJECT_DIR$/med_accounts/templates/account_logout.html" />
-        <option value="$PROJECT_DIR$/med_accounts/views.py" />
         <option value="$PROJECT_DIR$/med_accounts/urls.py" />
         <option value="$PROJECT_DIR$/hospitals/templates/loginpartial.html" />
+        <option value="$PROJECT_DIR$/med_accounts/views.py" />
       </list>
     </option>
   </component>
@@ -706,14 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/med_accounts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5269565">
-          <caret line="105" column="8" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/med_accounts/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -770,16 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/med_accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/med_accounts/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -800,9 +787,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hospitals/templates/loginpartial.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15260324">
+        <state vertical-scroll-proportion="-3.2692308">
           <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/med_accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="105" column="8" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/med_accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6123499">
+          <caret line="48" column="46" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -37,6 +37,7 @@ def base(request):
     patient = Patient.objects.all()
     user_on = request.user
     user_short = user_on.get_short_name()
+    user_long = user_on.get_full_name()
     user_name = user_on.get_username()
     assert isinstance(request, HttpRequest)
     return render (
@@ -45,7 +46,7 @@ def base(request):
         {'patients': patient},
         context_instance=RequestContext(request,
         {
-            'title': 'Welcome Dr ' + user_short,
+            'title': 'Welcome Dr ' + user_long,
             'doctor_name': user_short,
             'message': "Here's the list of your patients sir",
             "user_name": user_name,
