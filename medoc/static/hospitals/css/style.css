@@ -30,7 +30,7 @@ border-bottom:5px solid #B5EAE2;
 
 .th_contact02
 {
-background-color:#4C2A85;
+background-color: white;
 border-radius:0 0 12px 12px;
 padding:2rem;
 width:30%;
@@ -73,28 +73,32 @@ text-shadow: #FFFFFF;
 .panel-body
 {
   background-color: #4C2A85;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .panel-medoc {
   background-color: #2274A5;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .panel
 {
     background-color: #2274A5;
         width:100%;
+          font-family: 'Ubuntu', sans-serif;
 }
 
 .panel-primary
 {
     background-color: #4C2A85;
     border: 1px solid #FFFFFF;
-
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .hospital {
   color : #4C2A85;
   background-color: white;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .panel-primary > .panel-heading {

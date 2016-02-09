@@ -17,6 +17,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from hospitals import urls as hospitals_urls
 from med_accounts import urls as med_accounts_urls
+from contact import urls as contact_urls
 from hospitals import views
 
 urlpatterns = [
@@ -24,4 +25,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^hospitals/', include(hospitals_urls)),
     url(r'^medoc/', include(med_accounts_urls)),
+    url(r'^contact/', include(contact_urls)),
 ]

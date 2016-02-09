@@ -1,0 +1,109 @@
+{% extends "layout_en.html" %}
+
+{% block content %}
+{% load staticfiles %}
+<center><h2 class="customheader">{{ title }}</h2></center>
+<center><p>{{ message }}</p></center>
+
+<div class="tabs">
+<table class="bodydiv" align="center">
+	<tr>
+	<th class="th_contact010">
+	<img width="40%"  class="img-circle" src="{% static 'hospitals/images/Alexandre.jpg' %}"></th>
+
+	<th class="th_contact010">
+	<img width="40%"  class="img-circle" src="{% static 'hospitals/images/Vales.jpg' %}"></th>
+</tr>
+<p>&nbsp;</p>
+<tr>	<th class="th_contact02">
+	<i><p class="contact_text"> Alexandre Erich Sébastien GEORGES </p></i>
+</br>
+	<p class="contact_text"> Lead Designer and Coder </p>
+<address class="contact_text">
+    Port-au-Prince, HT <br />
+    <abbr title="Phone">P:</abbr>
+    509.3125.3334
+</address>
+</th>
+
+<th class="th_contact02">
+<i><p class="contact_text"> Riccardy VALES	 </p></i>
+</br>
+<p class="contact_text"> Coder </p>
+<address class="contact_text">
+	Port-au-Prince, HT <br />
+	<abbr title="Phone">P:</abbr>
+	509.3731.1824
+</address>
+</th>
+</tr>
+</table>
+
+<table class="bodydiv" align="center">
+<tr>
+		<th class="th_contact010">
+		<p class="contact_text"><img width="40%" class="img-circle" src="{% static 'hospitals/images/Henri.JPG' %}"></p></th>
+		<th class="th_contact010">
+		<img width="40%" class="img-circle" src="{% static 'hospitals/images/Olivier.JPG' %}"></th>
+</tr>
+	<th class="th_contact02">
+		<i><p class="contact_text"> Henri Edouard FRANCOIS	 </p></i>
+	</br>
+		<p class="contact_text"> Backend Coder </p>
+			<address class="contact_text">
+				Port-au-Prince, HT <br />
+				<abbr title="Phone">P:</abbr>
+				509.3104.7251
+			</address>
+
+			<th class="th_contact02">
+				<i><p class="contact_text"> Olivier Eric GERMAIN </p></i>
+			</br>
+				<p class="contact_text"> Relations Externes and Designer </p>
+					<address class="contact_text">
+						Port-au-Prince, HT <br />
+						<abbr title="Phone">P:</abbr>
+						509.3419.4278
+					</address>
+	</th>
+</table>
+
+<table class="bodydiv" align="center">
+	<tr>
+		<th class="th_contact010">
+		<img width="40%"  class="img-circle" src="{% static 'hospitals/images/laforest.jpg' %}"></th>
+		<th class="th_contact010">
+		<img width="40%"  class="img-circle" src="{% static 'hospitals/images/ms-icon-310x310.png' %}"></th>
+	</tr>
+	<tr>
+		<th class="th_contact02">
+			<i><p class="contact_text"> Christian Olivier Laforest	 </p></i>
+		</br>
+			<p class="contact_text"> Relations Externes </p>
+				<address class="contact_text">
+					Port-au-Prince, HT <br />
+					<abbr title="Phone">P:</abbr>
+					509.3104.7251
+				</address>
+			</th>
+
+			<th class="th_contact02">
+				<i><p class="contact_text"> Institution Saint-Louis de Gonzague </p></i>
+			</br>
+				<p class="contact_text"> Thanks to our Alma Mater </p>
+					<address class="contact_text">
+						Delmas 31, HT <br />
+					</address>
+				</th>
+			</tr>
+		</table>
+
+
+
+
+	<p>&nbsp;</p>
+
+<br />
+</div>
+<br /><br /><br /><br /><br />
+{% endblock %}
