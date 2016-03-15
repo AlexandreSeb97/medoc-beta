@@ -124,14 +124,18 @@ class UserChangeForm(forms.ModelForm):
 
 
 class LoginForm(forms.Form):
+    class Meta:
+        model = MyDoctor
+        fields = ('name', 'password')
+
     #Authentication form which WILL USE BOOTSTRAP NOW AND NOT THIS RAW UGLY LOOKING SHIT THAT WAS THERE BEFORE"
-    name = forms.CharField(label="Your username", widget=forms.TextInput({
-                                       'class': 'form-control',
-                                       'placeholder': 'User name'}))
-    password = forms.CharField(label=_("Password"),
-                widget=forms.PasswordInput({
-                'class':'form-control',
-                'placeholder':'Password'}))
+    name = forms.CharField(label="Your username")#, widget=forms.TextInput({
+                                       #'class': 'form-control',
+                                       #'placeholder': 'User name'}))
+    password = forms.CharField(label="Password")#,
+                #widget=forms.PasswordInput({
+                #'class':'form-control',
+                #'placeholder':'Password'}))
 
 
 class PatientsModelForm(forms.ModelForm):

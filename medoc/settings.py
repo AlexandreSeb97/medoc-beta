@@ -55,7 +55,6 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'medoc.urls'
 
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -79,6 +78,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'medoc.wsgi.application'
 
+AUTHENTICATION_BACKENDS = (
+                            'django.contrib.auth.backends.ModelBackend',
+)
+
+AUTH_USER_MODEL = 'med_accounts.MyDoctor'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases

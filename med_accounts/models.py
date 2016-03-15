@@ -109,6 +109,7 @@ class Patient(models.Model):
     name = models.CharField(max_length=255, unique=True,)
     email = models.EmailField(verbose_name='email address', max_length=255, unique=True,)
     created_by = models.CharField(max_length=255, default='Not Created')
+    requested_doc = models.CharField(max_length=255, default='No Doctor Yet')
 
     def __str__(self):
         return self.patient_last_name

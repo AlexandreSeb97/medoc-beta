@@ -1,19 +1,23 @@
 {% extends "layout_en.html" %}
 
 {% block content %}
- <div class="page-header">
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
-<h4><i>{{ todocs }}</i></h4>
-<p><a href="{% url 'register' %}" class="btn btn-primary btn-large">Register! &raquo;</a></p>
-<div class="alert alert-info alert-dismissible" role="alert">
+<table class="bodydiv" align="center">
+	<tr>
+	    <th class="th_contact02">
+            <h1>{{ title }}.</h1>
+            <h4> Are you Patient and need an account? Follow the link! </h4>
+        </th>
+    </tr>
+</table>
+<br><br><br>
+     <div class="panel panel-primary">
+         <div class="panel-body">
+             <div class="alert alert-info alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   Seeing your name as a registered doctor here fills you with determination!</div>
-            </div>
-
-            <div class="panel panel-primary">
-              <div class="panel-body">
-
+            <h3 class="lead2">{{ message }}</h3>
+            <h4 class="lead2"><i>{{ todocs }}</i></h4>
+             <p><a href="{% url 'register' %}" class="btn btn-default">Register! &raquo;</a></p>
 <h1 class="hospital" > Doctors in Haiti (beta) </h1>
   {% for mydoctor in mydoctors %}
     {% if mydoctor.country == "Haiti" %}
