@@ -66,7 +66,7 @@ class MyDoctor(AbstractBaseUser):
     objects = MyUserManager()
 
     USERNAME_FIELD = 'name'
-    REQUIRED_FIELDS = ['email', 'country', 'specialite']
+    REQUIRED_FIELDS = ['email', 'country', 'specialite', 'owner_first_name', 'owner_last_name',]
 
     def get_full_name(self):
         # The user is identified by their email address

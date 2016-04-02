@@ -78,9 +78,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'medoc.wsgi.application'
 
-AUTHENTICATION_BACKENDS = (
-                            'django.contrib.auth.backends.ModelBackend',
-)
+#AUTHENTICATION_BACKENDS = (
+ #                           'django.contrib.auth.backends.ModelBackend',
+#)
 
 AUTH_USER_MODEL = 'med_accounts.MyDoctor'
 

@@ -1,7 +1,7 @@
 {% if request.user.is_authenticated %}
     {% csrf_token %}
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'base' %}"> Logged in as {{ user.username }}!</a></li>
+        <li><a href="{% url 'base' %}"> Logged in as {{ user.name }}!</a></li>
         <li><a href="{% url 'auth_logout' %}">Log off</a></li>
     </ul>
         <ul class="nav navbar-nav">
